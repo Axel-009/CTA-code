@@ -106,8 +106,8 @@ score = 0
 for x in test:
     input('press Enter to show next:')
     show_train()
-    plt.scatter(x[0], x[1], c='red', marker='x')  # 测试点
-    near, belong = kdt.search(x[:-1], 5)  # 设置临近点的个数
+    plt.scatter(x[0], x[1], c='red', marker='x')  # test point
+    near, belong = kdt.search(x[:-1], 5)  # set the number of nearest neighbor points
     if belong == x[-1]:
         score += 1
     print("test:")
@@ -115,7 +115,7 @@ for x in test:
     print("nearest:")
     for n in near:
         print(n[1].data, "dist:", n[0])
-        plt.scatter(n[1].data[0], n[1].data[1], c='green', marker='+')  # k个最近邻点
+        plt.scatter(n[1].data[0], n[1].data[1], c='green', marker='+')  # k nearest neighbor points
     plt.legend()
     plt.show()
 
